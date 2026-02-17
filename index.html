@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Texas Hold'em - Chips & Betting</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="top">
+      <h1>Texas Hold’em</h1>
+      <p class="sub">Bots, betting, blinds, and a bank. Yes, your opponents are cheaters (they’re not, you just lost).</p>
+    </header>
+
+    <section class="grid">
+      <div class="panel table">
+        <div class="row">
+          <div class="pill" id="handInfo">Hand: —</div>
+          <div class="pill" id="stageInfo">Stage: —</div>
+          <div class="pill" id="dealerInfo">Dealer: —</div>
+        </div>
+
+        <div class="board">
+          <h2>Community</h2>
+          <div class="cards" id="community"></div>
+        </div>
+
+        <div class="pots">
+          <div class="potbox">
+            <div class="label">Pot</div>
+            <div class="value" id="pot">0</div>
+          </div>
+          <div class="potbox">
+            <div class="label">To call</div>
+            <div class="value" id="toCall">0</div>
+          </div>
+          <div class="potbox">
+            <div class="label">Min raise</div>
+            <div class="value" id="minRaise">0</div>
+          </div>
+        </div>
+
+        <div class="seats" id="seats"></div>
+      </div>
+
+      <div class="panel controls">
+        <h2>Controls</h2>
+
+        <div class="bankline">
+          <div class="stat">
+            <span class="k">Your bank</span>
+            <span class="v" id="yourBank">0</span>
+          </div>
+          <div class="stat">
+            <span class="k">Your bet</span>
+            <span class="v" id="yourBet">0</span>
+          </div>
+        </div>
+
+        <div class="btnrow">
+          <button id="newHandBtn">New Hand</button>
+          <button id="nextBtn" class="ghost">Next</button>
+          <button id="resetBankBtn" class="ghost small">Reset Bank</button>
+        </div>
+
+        <hr />
+
+        <div class="actionbox">
+          <div class="btnrow">
+            <button id="foldBtn" class="danger">Fold</button>
+            <button id="callBtn">Check / Call</button>
+          </div>
+
+          <div class="raiserow">
+            <input id="raiseAmt" type="number" min="0" step="10" value="50" />
+            <button id="raiseBtn">Raise</button>
+          </div>
+
+          <p class="hint" id="msg">—</p>
+        </div>
+
+        <hr />
+
+        <div class="settings">
+          <div class="stat">
+            <span class="k">Small blind</span>
+            <span class="v" id="sbVal">10</span>
+          </div>
+          <div class="stat">
+            <span class="k">Big blind</span>
+            <span class="v" id="bbVal">20</span>
+          </div>
+          <div class="stat">
+            <span class="k">Bots</span>
+            <span class="v" id="botCount">3</span>
+          </div>
+        </div>
+
+        <p class="tiny">Tip: “Next” advances the hand *after* betting is settled. If you spam it, you deserve what happens.</p>
+      </div>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
